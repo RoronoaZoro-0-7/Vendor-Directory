@@ -3,7 +3,7 @@
     import org.springframework.web.bind.annotation.*;
     import org.springframework.beans.factory.annotation.Autowired;
     import com.example.react.service.ProductService;
-    import com.example.react.model.Product;
+    import com.example.react.model.Vendor;
     import java.util.List;
 
     @RestController
@@ -14,17 +14,17 @@
         private ProductService productService;
 
         @GetMapping
-        public List<Product> getAllProducts() {
+        public List<Vendor> getAllProducts() {
             return productService.getAllProducts();
         }
 
         @GetMapping("/{id}")
-        public Product getProductById(@PathVariable Long id) {
+        public Vendor getProductById(@PathVariable Long id) {
             return productService.getProductById(id);
         }
 
         @PostMapping("/add")
-        public void addProduct(@RequestBody Product product) {
+        public void addProduct(@RequestBody Vendor product) {
             productService.addProduct(product);
         }
 
